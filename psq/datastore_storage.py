@@ -72,6 +72,7 @@ class DatastoreStorage(Storage):
 
         entity['data'] = dumps(task)
         entity['timestamp'] = datetime.utcnow()
+        entity['status'] = task.status
 
         self.datastore.put(entity)
 
